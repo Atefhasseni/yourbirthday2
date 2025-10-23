@@ -1,0 +1,64 @@
+/* تنسيقات عامة للصفحة */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* خلفية خفيفة */
+}
+
+/* حاوية الشرائح */
+.slider-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden; /* لإخفاء أي جزء زائد من الصور */
+    height: 100vh; /* تأكد من أن الحاوية تملأ ارتفاع الشاشة بالكامل */
+}
+
+/* تنسيق الشريحة الواحدة */
+.slide {
+    display: none; /* إخفاء جميع الشرائح افتراضياً */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* تنسيق الصورة داخل الشريحة */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لضمان تغطية الصورة للحاوية دون تشوه */
+}
+
+/* تنسيق النص (جملة التهنئة) */
+.text-overlay {
+    position: absolute;
+    top: 50%; /* وسط عمودياً */
+    left: 50%; /* وسط أفقياً */
+    transform: translate(-50%, -50%); /* لضمان التوسيط الدقيق */
+    color: white; /* لون النص أبيض */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة للنص */
+    border-radius: 10px;
+    text-align: center;
+    direction: rtl; /* اتجاه النص من اليمين لليسار */
+}
+
+.text-overlay h1 {
+    margin: 0;
+    font-size: 3em; /* حجم خط كبير */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* ظل للنص ليكون أوضح */
+}
+
+/* تأثير التلاشي عند التبديل */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
